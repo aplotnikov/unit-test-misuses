@@ -1,8 +1,5 @@
 package org.home.client;
 
-import org.home.client.Client;
-import org.home.client.ClientRepository;
-import org.home.client.ClientService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
@@ -22,13 +19,17 @@ import static org.mockito.Mockito.verify;
 @RunWith(MockitoJUnitRunner.class)
 public class GoodTest {
 
-    @Mock private ClientRepository repository;
+    @Mock
+    private ClientRepository repository;
 
-    @InjectMocks private ClientService service;
+    @InjectMocks
+    private ClientService service;
 
-    @Captor private ArgumentCaptor<Client> clientArgumentCaptor;
+    @Captor
+    private ArgumentCaptor<Client> clientArgumentCaptor;
 
-    @Captor private ArgumentCaptor<List<Client>> clientsArgumentCaptor;
+    @Captor
+    private ArgumentCaptor<List<Client>> clientsArgumentCaptor;
 
     @Test
     public void shouldCreateNewClient() {

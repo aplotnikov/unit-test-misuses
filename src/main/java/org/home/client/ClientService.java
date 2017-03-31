@@ -8,11 +8,11 @@ import static lombok.AccessLevel.PRIVATE;
 
 @FieldDefaults(level = PRIVATE, makeFinal = true)
 @RequiredArgsConstructor
-public class ClientService {
+class ClientService {
 
     ClientRepository repository;
 
-    public void createOne(String name, String surname) {
+    void createOne(String name, String surname) {
         Client client = new Client();
         client.setName(name);
         client.setSurname(surname);
@@ -20,11 +20,11 @@ public class ClientService {
         repository.save(client);
     }
 
-    public void createAll(Client... clients) {
+    void createAll(Client... clients) {
         repository.save(asList(clients));
     }
 
-    public void deleteOne(Long id) {
+    void deleteOne(Long id) {
         repository.delete(id);
     }
 }

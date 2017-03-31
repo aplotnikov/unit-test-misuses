@@ -1,8 +1,5 @@
 package org.home.client;
 
-import org.home.client.Client;
-import org.home.client.ClientRepository;
-import org.home.client.ClientService;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;

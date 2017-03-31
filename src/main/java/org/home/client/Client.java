@@ -7,7 +7,7 @@ import static lombok.AccessLevel.PRIVATE;
 
 @Data
 @FieldDefaults(level = PRIVATE)
-public class Client {
+class Client {
 
     Long id;
 
