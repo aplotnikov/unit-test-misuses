@@ -1,4 +1,4 @@
-package org.home;
+package org.home.client;
 
 import java.util.List;
 

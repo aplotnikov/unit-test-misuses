@@ -1,5 +1,8 @@
-package org.home;
+package org.home.client;
 
+import org.home.client.Client;
+import org.home.client.ClientRepository;
+import org.home.client.ClientService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
