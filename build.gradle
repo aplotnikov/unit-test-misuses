@@ -1,0 +1,23 @@
+plugins {
+    id 'build-dashboard'
+    id 'java'
+    id 'groovy'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.4.1'
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.16.16'
+
+    testCompile 'org.codehaus.groovy:groovy-all:2.4.10',
+                'org.spockframework:spock-core:1.1-groovy-2.4-rc-4'
+}
