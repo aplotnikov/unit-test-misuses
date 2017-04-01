@@ -11,7 +11,7 @@ import org.junit.Assert
 import spock.lang.Specification
 import spock.lang.Unroll
 
-class BadSpec extends Specification {
+public class BadSpec extends Specification {
 
     static final CLIENT_ID = 1;
 
