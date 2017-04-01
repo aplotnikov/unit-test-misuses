@@ -2,15 +2,11 @@ package org.home.client;
 
 import java.util.List;
 
-class ClientRepository {
+interface ClientRepository {
 
-    Client save(Client client) {
-        return client;
-    }
+    void save(Client client);
 
-    List<Client> save(List<Client> clients) {
-        return clients;
-    }
+    void save(List<Client> clients);
 
-    void delete(Long id) {}
+    void delete(Long id);
 }
