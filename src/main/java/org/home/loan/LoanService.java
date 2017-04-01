@@ -2,8 +2,11 @@ package org.home.loan;
 
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import org.home.loan.domain.Distribution;
 import org.home.loan.domain.Loan;
 import org.home.loan.domain.LoanApplication;
+
+import java.util.List;
 
 import static lombok.AccessLevel.PRIVATE;
 
@@ -32,6 +35,10 @@ public class LoanService {
 
     public void process(Loan loan) {
         repository.save(loan);
+    }
+
+    public List<Distribution> findDistributionByLoanId(Long id) {
+        return repository.findOne(id).getDistributions();
     }
 
 }

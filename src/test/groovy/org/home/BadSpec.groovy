@@ -1,9 +1,11 @@
 package org.home
 
+import static java.util.stream.Collectors.toList
 import static org.home.loan.utils.BigDecimalUtils.amount
 
 import org.home.loan.LoanRepository
 import org.home.loan.LoanService
+import org.home.loan.domain.Distribution
 import org.home.loan.domain.Loan
 import org.home.loan.domain.LoanApplication
 import org.home.loan.domain.Term
@@ -11,9 +13,15 @@ import org.junit.Assert
 import spock.lang.Specification
 import spock.lang.Unroll
 
+import java.util.function.Predicate
+
 public class BadSpec extends Specification {
 
     static final CLIENT_ID = 1;
+
+    static final LOAN_ID = 1;
+
+    static final Predicate<Distribution> greaterThanZero = { true }
 
     LoanRepository repository = Mock();
 
@@ -30,6 +38,7 @@ public class BadSpec extends Specification {
         loan.getAmount() >> amount("1000")
         application.getTerm() >> new Term(30)
         application.getClientId() >> CLIENT_ID
+        loan.getId() >> LOAN_ID
     }
 
     @Unroll
@@ -72,6 +81,15 @@ public class BadSpec extends Specification {
             service.process(loan)
         then:
             1 * repository.save(loan)
+    }
+
+    def 'loan distributions amount should zero'() {
+        given:
+            repository.findOne(LOAN_ID) >> loanWith([new Distribution(amount: amount("30"))])
+        when:
+            List<Distribution> distributions = service.findDistributionByLoanId(LOAN_ID)
+        then:
+            distributions.stream().filter(greaterThanZero).collect(toList()).size() == 1
     }
 
     def loanWith(distributions) {

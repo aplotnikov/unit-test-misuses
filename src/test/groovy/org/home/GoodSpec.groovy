@@ -1,6 +1,7 @@
 package org.home
 
 import static org.home.loan.domain.Term.days
+import static org.home.loan.utils.BigDecimalUtils.amount
 
 import org.home.loan.LoanRepository
 import org.home.loan.LoanService
@@ -16,6 +17,9 @@ class GoodSpec extends Specification {
     @Shared
     Long clientId = 1
 
+    @Shared
+    Long loanId = 1
+
     LoanRepository repository = Mock(LoanRepository)
 
     @Subject
@@ -28,6 +32,7 @@ class GoodSpec extends Specification {
     }
 
     Loan loan = Stub(Loan) {
+        getId() >> loanId
         getAmount() >> 1000
     }
 
@@ -69,6 +74,15 @@ class GoodSpec extends Specification {
             service.process(loan)
         then:
             1 * repository.save(loan)
+    }
+
+    void 'loan distributions amount should zero'() {
+        given:
+            repository.findOne(loanId) >> loanWith([new Distribution(amount: 30)])
+        when:
+            List<Distribution> distributions = service.findDistributionByLoanId(loanId)
+        then:
+            distributions.findAll { it.amount > 0 }.size() == 1
     }
 
     private static Loan loanWith(List<Distribution> distributions) {
