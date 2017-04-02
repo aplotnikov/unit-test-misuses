@@ -1,6 +1,7 @@
 package org.home
 
 import static java.util.stream.Collectors.toList
+import static junit.framework.Assert.assertEquals
 import static org.home.loan.utils.BigDecimalUtils.amount
 
 import org.home.loan.LoanRepository
@@ -9,7 +10,6 @@ import org.home.loan.domain.Distribution
 import org.home.loan.domain.Loan
 import org.home.loan.domain.LoanApplication
 import org.home.loan.domain.Term
-import org.junit.Assert
 import spock.lang.Specification
 import spock.lang.Unroll
 
@@ -60,7 +60,8 @@ public class BadSpec extends Specification {
     public void shouldCreateNewLoanFromApplication() {
         Loan result = service.createLoanFrom(application)
 
-        Assert.assertEquals(result.amount, application.getAmount())
+        assertEquals(result.amount, application.getAmount())
+        throw new IllegalStateException('This test does not work. It has to fail build.')
     }
 
     def "should thrown NullPointerException when loan is null"() {
