@@ -52,9 +52,9 @@ public class BadSpec extends Specification {
             result.clientId == application.clientId
             result.term == application.term
         where:
-            amount             | term         || expectedResult
-            new BigDecimal(10) | new Term(20) || true
-            new BigDecimal(30) | new Term(10) || false
+            amount             | term         | expectedResult
+            new BigDecimal(10) | new Term(20) | true
+            new BigDecimal(30) | new Term(10) | false
     }
 
     public void shouldCreateNewLoanFromApplication() {
