@@ -86,7 +86,9 @@ public class BadSpec extends Specification {
 
     def 'loan distributions amount should zero'() {
         given:
-            repository.findOne(LOAN_ID) >> loanWith([new Distribution(amount: amount("30"))])
+            repository.findOne(LOAN_ID) >> loanWith([
+                    new Distribution(amount: amount("30"))
+            ])
         when:
             List<Distribution> distributions = service.findDistributionByLoanId(LOAN_ID)
         then:

@@ -85,6 +85,17 @@ class GoodSpec extends Specification {
             distributions.findAll { it.amount > 0 }.size() == 1
     }
 
+    void 'loan distributions amount should zero2'() {
+        given:
+            Distribution distribution = new Distribution(amount: 30)
+        and:
+            repository.findOne(loanId) >> loanWith([distribution])
+        when:
+            List<Distribution> distributions = service.findDistributionByLoanId(loanId)
+        then:
+            distributions.findAll { it.amount > 0 } == [distribution]
+    }
+
     private static Loan loanWith(List<Distribution> distributions) {
         return new Loan(distributions: distributions)
     }
