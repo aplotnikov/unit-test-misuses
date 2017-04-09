@@ -1,10 +1,8 @@
-package org.home
+package org.home.loan
 
 import static org.home.loan.domain.Term.days
 import static org.home.loan.utils.BigDecimalUtils.amount
 
-import org.home.loan.LoanRepository
-import org.home.loan.LoanService
 import org.home.loan.domain.Distribution
 import org.home.loan.domain.Loan
 import org.home.loan.domain.LoanApplication

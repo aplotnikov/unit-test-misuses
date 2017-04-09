@@ -6,9 +6,11 @@ import org.home.loan.domain.Distribution;
 import org.home.loan.domain.Loan;
 import org.home.loan.domain.LoanApplication;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import static lombok.AccessLevel.PRIVATE;
+import static org.home.loan.utils.BigDecimalUtils.amount;
 
 @FieldDefaults(level = PRIVATE, makeFinal = true)
 @RequiredArgsConstructor
@@ -39,6 +41,10 @@ public class LoanService {
 
     public List<Distribution> findDistributionByLoanId(Long id) {
         return repository.findOne(id).getDistributions();
+    }
+
+    public BigDecimal calculateCommisionFor(Loan loan) {
+        return loan.getAmount().multiply(amount(0.1));
     }
 
 }

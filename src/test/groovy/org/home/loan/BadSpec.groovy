@@ -1,11 +1,9 @@
-package org.home
+package org.home.loan
 
 import static java.util.stream.Collectors.toList
 import static junit.framework.Assert.assertEquals
 import static org.home.loan.utils.BigDecimalUtils.amount
 
-import org.home.loan.LoanRepository
-import org.home.loan.LoanService
 import org.home.loan.domain.Distribution
 import org.home.loan.domain.Loan
 import org.home.loan.domain.LoanApplication
