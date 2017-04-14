@@ -43,7 +43,7 @@ public class LoanService {
         return repository.findOne(id).getDistributions();
     }
 
-    public BigDecimal calculateCommisionFor(Loan loan) {
+    public BigDecimal calculateCommissionFor(Loan loan) {
         return loan.getAmount().multiply(amount(0.1));
     }
 

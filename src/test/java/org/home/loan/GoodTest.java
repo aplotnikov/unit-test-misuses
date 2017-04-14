@@ -23,7 +23,7 @@ public class GoodTest {
         Loan loan = new Loan();
         loan.setAmount(amount(15));
 
-        BigDecimal commission = service.calculateCommisionFor(loan);
+        BigDecimal commission = service.calculateCommissionFor(loan);
 
         assertThat(commission, comparesEqualTo(amount(1.5)));
     }
