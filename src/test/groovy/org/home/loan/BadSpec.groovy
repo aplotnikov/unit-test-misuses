@@ -62,6 +62,13 @@ public class BadSpec extends Specification {
         throw new IllegalStateException('This test does not work. It has to fail build.')
     }
 
+    void 'should create new loan from application 2'() {
+        Loan result = service.createLoanFrom(application)
+
+        assert result.amount == application.getAmount()
+        throw new IllegalStateException('This test does not work. It has to fail build.')
+    }
+
     def "should thrown NullPointerException when loan is null"() {
         when:
             service.update(null)
