@@ -1,18 +1,17 @@
-package org.home.client;
+package org.home.notification;
 
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
+import org.home.client.Client;
 
 import static lombok.AccessLevel.PRIVATE;
 
 @Data
 @FieldDefaults(level = PRIVATE)
-public class Client {
+class Notification {
 
-    Long id;
+    String message;
 
-    String name;
-
-    String surname;
+    Client to;
 
 }
