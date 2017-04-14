@@ -13,7 +13,7 @@ import spock.lang.Unroll
 
 import java.util.function.Predicate
 
-public class BadSpec extends Specification {
+public class LoanServiceBadSpec extends Specification {
 
     static final CLIENT_ID = 1;
 

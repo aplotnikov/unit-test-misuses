@@ -13,7 +13,7 @@ import static org.home.loan.utils.BigDecimalUtils.amount;
 import static org.junit.Assert.assertThat;
 
 @RunWith(MockitoJUnitRunner.class)
-public class GoodTest {
+public class LoanServiceGoodTest {
 
     @InjectMocks
     private LoanService service;

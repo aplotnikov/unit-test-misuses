@@ -10,7 +10,7 @@ import spock.lang.Shared
 import spock.lang.Specification
 import spock.lang.Subject
 
-class GoodSpec extends Specification {
+class LoanServiceGoodSpec extends Specification {
 
     @Shared
     Long clientId = 1

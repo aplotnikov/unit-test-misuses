@@ -12,7 +12,7 @@ import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
-public class BadTest {
+public class ClientServiceBadTest {
 
     private ClientRepository repository;
 
