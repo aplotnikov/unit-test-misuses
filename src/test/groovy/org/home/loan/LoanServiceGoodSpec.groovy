@@ -53,7 +53,7 @@ class LoanServiceGoodSpec extends Specification {
         when:
             Loan result = service.createLoanFrom(application)
         then:
-            result.amount == application.getAmount()
+            result.amount == application.amount
     }
 
     void 'should thrown NullPointerException when call update method'() {
