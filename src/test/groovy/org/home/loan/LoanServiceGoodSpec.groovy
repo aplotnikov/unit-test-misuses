@@ -98,4 +98,8 @@ class LoanServiceGoodSpec extends Specification {
         return new Loan(distributions: distributions)
     }
 
+    private LoanApplication application() {
+        return new LoanApplication(amount: 1000, term: days(30), clientId: clientId)
+    }
+
 }

@@ -65,7 +65,7 @@ public class LoanServiceBadSpec extends Specification {
     void 'should create new loan from application 2'() {
         Loan result = service.createLoanFrom(application)
 
-        assert result.amount == application.getAmount()
+        assert result.amount == application.amount
         throw new IllegalStateException('This test does not work. It has to fail build.')
     }
 
@@ -107,7 +107,7 @@ public class LoanServiceBadSpec extends Specification {
     }
 
     def application() {
-        LoanApplication application = Stub()
+        LoanApplication application = GroovyStub()
         application.getAmount() >> new BigDecimal(1000)
         application.getTerm() >> new Term(30);
         application.getClientId() >> CLIENT_ID
