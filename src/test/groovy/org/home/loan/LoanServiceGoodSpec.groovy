@@ -29,7 +29,7 @@ class LoanServiceGoodSpec extends Specification {
         getClientId() >> clientId
     }
 
-    Loan loan = Stub(Loan) {
+    Loan loan = Stub {
         getId() >> loanId
         getAmount() >> 1000
     }
