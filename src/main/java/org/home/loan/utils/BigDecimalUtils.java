@@ -1,13 +1,11 @@
 package org.home.loan.utils;
 
-import lombok.NoArgsConstructor;
-
 import java.math.BigDecimal;
 
-import static lombok.AccessLevel.PRIVATE;
-
-@NoArgsConstructor(access = PRIVATE)
 public final class BigDecimalUtils {
+
+    private BigDecimalUtils() {
+    }
 
     public static BigDecimal amount(String amount) {
         return amount(Double.valueOf(amount));

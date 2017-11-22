@@ -1,7 +1,5 @@
 package org.home.loan;
 
-import lombok.RequiredArgsConstructor;
-import lombok.experimental.FieldDefaults;
 import org.home.loan.domain.Distribution;
 import org.home.loan.domain.Loan;
 import org.home.loan.domain.LoanApplication;
@@ -9,14 +7,15 @@ import org.home.loan.domain.LoanApplication;
 import java.math.BigDecimal;
 import java.util.List;
 
-import static lombok.AccessLevel.PRIVATE;
 import static org.home.loan.utils.BigDecimalUtils.amount;
 
-@FieldDefaults(level = PRIVATE, makeFinal = true)
-@RequiredArgsConstructor
 public class LoanService {
 
-    LoanRepository repository;
+    private final LoanRepository repository;
+
+    public LoanService(LoanRepository repository) {
+        this.repository = repository;
+    }
 
     public Loan findLoanBy(Long id) {
         return repository.findOne(id);

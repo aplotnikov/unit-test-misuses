@@ -16,8 +16,6 @@ sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
 dependencies {
-    compileOnly 'org.projectlombok:lombok:1.16.16'
-
     testCompile 'org.codehaus.groovy:groovy-all:2.4.12'
     testCompile 'org.spockframework:spock-core:1.1-groovy-2.4'
     testCompile 'junit:junit:4.12'
