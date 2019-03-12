@@ -15,10 +15,12 @@ dependencies {
     compileOnly 'org.projectlombok:lombok:1.18.6'
     annotationProcessor 'org.projectlombok:lombok:1.18.6'
 
-    testCompile 'org.codehaus.groovy:groovy-all:2.4.12'
-    testCompile 'org.spockframework:spock-core:1.1-groovy-2.4'
-    testCompile 'junit:junit:4.12'
-    testCompile 'org.hamcrest:hamcrest-junit:2.0.0.0'
-    testCompile 'org.mockito:mockito-core:2.7.20'
-    testCompile 'net.bytebuddy:byte-buddy:1.9.10'
+    testCompile(
+            'org.codehaus.groovy:groovy-all:2.4.12',
+            'org.spockframework:spock-core:1.1-groovy-2.4',
+            'junit:junit:4.12',
+            'org.hamcrest:hamcrest-junit:2.0.0.0',
+            'org.mockito:mockito-core:2.7.20',
+            'net.bytebuddy:byte-buddy:1.9.10'
+    )
 }
