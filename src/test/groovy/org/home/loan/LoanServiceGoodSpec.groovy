@@ -1,7 +1,6 @@
 package org.home.loan
 
 import static org.home.loan.domain.Term.days
-import static org.home.loan.utils.BigDecimalUtils.amount
 
 import org.home.loan.domain.Distribution
 import org.home.loan.domain.Loan
