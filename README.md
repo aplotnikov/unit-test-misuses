@@ -1,0 +1,1 @@
+[![CircleCI](https://circleci.com/gh/aplotnikov/unit-test-misuses.svg?style=svg)](https://circleci.com/gh/aplotnikov/unit-test-misuses)
